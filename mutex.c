@@ -20,11 +20,17 @@ void *routine()
         mails++;
         pthread_mutex_unlock(&mutex);   // unlock the critical section
     }
+    int *res = malloc(sizeof(int));
+    *res = 0;
+    return (void*) res;
 }
 
 int main()
 {
     pthread_t th[NUM_THREADS];
+
+    int *res;   // will be used as double pointer for returning result
+                // of threads
 
     pthread_mutex_init(&mutex, NULL);   // initialize mutex object
 
@@ -37,11 +43,12 @@ int main()
     }
 
     for (int i=0; i < NUM_THREADS; i++) {
-        if (pthread_join(th[i], NULL) != 0) {
+        if (pthread_join(th[i], (void**)&res) != 0) {
             printf("Failed to join thread: %d\n", i);
             return -2;
         }
-        printf("Thread %d has finisHed\n", i);
+        printf("Thread %d has finished with result: %d\n", i, *res);
+        free(res);
     }
 
     pthread_mutex_destroy(&mutex);      // free mutex from memory
