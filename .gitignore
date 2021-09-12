@@ -1,5 +1,7 @@
 *.exe
 *.out
+*.s
 mutex
 threads
 procs
+race_conditions
