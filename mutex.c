@@ -1,7 +1,6 @@
 /*
  * Solve the race condition using a mutex. The mutex ensures the
- * critical section is only run by one thread at a time. One of the
- * drawbacks of mutexes is they are typically slower.
+ * critical section is only run by one thread at a time.
 */
 
 #include <stdlib.h>
