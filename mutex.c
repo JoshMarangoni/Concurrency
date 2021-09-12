@@ -10,14 +10,14 @@
 #define BIG_NUM 1000000000
 
 int mails = 0;
-pthread_mutex_t mutex;   // declare mutex object
+pthread_mutex_t mutex;                  // declare mutex object
 
 void *routine()
 {
     for (int i=0; i < BIG_NUM; i++) {
-        pthread_mutex_lock(&mutex);    // lock the critical section
+        pthread_mutex_lock(&mutex);     // lock the critical section
         mails++;
-        pthread_mutex_unlock(&mutex);  // unlock the critical section
+        pthread_mutex_unlock(&mutex);   // unlock the critical section
     }
 }
 
