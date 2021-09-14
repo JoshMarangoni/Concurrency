@@ -1,5 +1,5 @@
 /*
- * 
+ * Simple example of a counting semaphore
 */
 
 #include <stdlib.h>
