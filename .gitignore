@@ -9,3 +9,4 @@ args
 sum
 trylock
 barrier
+deadlock
