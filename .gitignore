@@ -10,3 +10,5 @@ sum
 trylock
 barrier
 deadlock
+semaphore
+producer_consumer
