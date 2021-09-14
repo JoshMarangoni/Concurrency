@@ -1,6 +1,5 @@
 /*
- * Solve the race condition using a mutex. The mutex ensures the
- * critical section is only run by one thread at a time.
+ * Demonstrates deadlock by locking the same mutex twice.
 */
 
 #include <stdlib.h>
